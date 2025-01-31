@@ -44,8 +44,11 @@ def get_top_10_states(file_path: pathlib.Path) -> list:
         with file_path.open('r', encoding='utf-8-sig') as file:
             csv_reader = csv.DictReader(file)
 
+            # Normalize column names by stripping whitespace and removing non-breaking spaces
+            csv_reader.fieldnames = [col.strip().replace("\xa0", "") for col in csv_reader.fieldnames]
+
             # Check if the expected "State" column exists in the CSV
-            if not csv_reader.fieldnames or "State" not in csv_reader.fieldnames:
+            if "State" not in csv_reader.fieldnames:
                 logger.error(f"CSV missing 'State' column. Found headers: {csv_reader.fieldnames}")
                 return []
 
@@ -72,6 +75,7 @@ def get_top_10_states(file_path: pathlib.Path) -> list:
     except Exception as e:
         logger.error(f"Error processing CSV file: {e}")
         return []
+
 
 def process_csv_file():
     """
