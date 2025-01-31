@@ -118,3 +118,21 @@
 2025-01-31 16:30:57.755 | INFO     | __main__:<module>:106 - Starting CSV processing...
 2025-01-31 16:30:57.757 | INFO     | __main__:process_csv_file:99 - Processed CSV file: data\FDIC_failed_bank_list.csv, Statistics saved to: data_processed\top_10_states_failed_banks.txt
 2025-01-31 16:30:57.757 | INFO     | __main__:<module>:108 - CSV processing complete.
+2025-01-31 16:42:06.345 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 16:42:06.345 | INFO     | __main__:<module>:98 - Starting Excel processing...
+2025-01-31 16:42:06.345 | ERROR    | __main__:find_highest_price_nsn:70 - Error processing Excel file: [Errno 2] No such file or directory: 'data\\feedback.xlsx'
+2025-01-31 16:42:06.346 | INFO     | __main__:process_excel_file:91 - Processed Excel file: data\feedback.xlsx, Statistics saved to: data_processed\highest_price_nsn_per_rep_office.txt
+2025-01-31 16:42:06.346 | INFO     | __main__:<module>:100 - Excel processing complete.
+2025-01-31 16:45:17.637 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 16:45:17.637 | INFO     | __main__:<module>:98 - Starting Excel processing...
+2025-01-31 16:45:18.093 | INFO     | __main__:process_excel_file:91 - Processed Excel file: data\national_stock_number_2023.xlsx, Statistics saved to: data_processed\highest_price_nsn_per_rep_office.txt
+2025-01-31 16:45:18.094 | INFO     | __main__:<module>:100 - Excel processing complete.
+2025-01-31 16:53:18.437 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 16:53:18.437 | INFO     | __main__:<module>:101 - Starting Excel processing...
+2025-01-31 16:53:18.437 | ERROR    | __main__:find_highest_price_nsn:73 - Error processing Excel file: [Errno 2] No such file or directory: 'data\\feedback.xlsx'
+2025-01-31 16:53:18.438 | INFO     | __main__:process_excel_file:94 - Processed Excel file: data\feedback.xlsx, Statistics saved to: data_processed\highest_price_nsn_per_rep_office.txt
+2025-01-31 16:53:18.438 | INFO     | __main__:<module>:103 - Excel processing complete.
+2025-01-31 16:54:33.012 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 16:54:33.013 | INFO     | __main__:<module>:101 - Starting Excel processing...
+2025-01-31 16:54:33.485 | INFO     | __main__:process_excel_file:94 - Processed Excel file: data\national_stock_number_2023.xlsx, Statistics saved to: data_processed\highest_price_nsn_per_rep_office.txt
+2025-01-31 16:54:33.486 | INFO     | __main__:<module>:103 - Excel processing complete.

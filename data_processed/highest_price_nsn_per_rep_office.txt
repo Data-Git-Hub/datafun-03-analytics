@@ -1,0 +1,10 @@
+Highest Price NSN per rep_office:
+================================================================================
+Rep Office          NSN                 Common Name         Price
+================================================================================
+General Products    7910-01-198-3913    Pneumatic Vacuum Cleaner31135.97
+Office Supplies & Paper Special Order7490-01-700-6545    Paper Disintegrator (NSA EPL)160169.07
+Hardware            5130-00-468-0849    Hydraulic Torque Wrench38721.14
+Office Furniture    7110-01-698-9700    U-Shape Reception Desk5250.66
+Household and Industrial7110-01-702-5670    Bi-Fold Folding Table232.69
+Furniture Systems Management7110-01-622-3736    Lounge Chair        928.87
