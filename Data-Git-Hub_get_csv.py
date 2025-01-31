@@ -61,7 +61,7 @@ def fetch_csv_file(folder_name: str, filename: str, url: str) -> None:
 
 def write_csv_file(folder_name: str, filename: str, string_data: str) -> None:
     """
-    Write CSV data to a file.
+    Write CSV data to a file with UTF-8 encoding.
 
     Args:
         folder_name (str): Name of the folder to save the file.
@@ -75,11 +75,12 @@ def write_csv_file(folder_name: str, filename: str, string_data: str) -> None:
     try:
         logger.info(f"Writing CSV data to {file_path}...")
         file_path.parent.mkdir(parents=True, exist_ok=True)
-        with file_path.open('w') as file:
+        with file_path.open('w', encoding='utf-8') as file:  # Specify UTF-8 encoding here to fix the error get_file action
             file.write(string_data)
         logger.info(f"SUCCESS: CSV data written to {file_path}")
     except IOError as io_err:
         logger.error(f"Error writing CSV data to {file_path}: {io_err}")
+
 
 #####################################
 # Define main() function
@@ -100,5 +101,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-# TODO: Run this script to ensure all functions work as intended.
 
