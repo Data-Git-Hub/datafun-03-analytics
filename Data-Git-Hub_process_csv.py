@@ -1,5 +1,6 @@
 """
-Process a CSV file on which states had the most failed banks top 10 list and other statistics.
+Process a CSV file to determine the top 10 states with the most failed banks 
+and their percentage of total bank failures.
 """
 
 #####################################
@@ -9,7 +10,7 @@ Process a CSV file on which states had the most failed banks top 10 list and oth
 # Import from Python Standard Library
 import pathlib
 import csv
-import statistics
+from collections import Counter
 
 # Import from local project modules
 from utils_logger import logger
@@ -25,49 +26,75 @@ processed_folder_name: str = "processed"
 # Define Functions
 #####################################
 
-def analyze_ladder_score(file_path: pathlib.Path) -> dict:
-    """Analyze the Ladder score column to calculate min, max, mean, and stdev."""
+def get_top_10_states(file_path: pathlib.Path) -> list:
+    """
+    Analyze the CSV file to find the top 10 states with the most failed banks
+    and calculate their percentage of total failures.
+
+    Args:
+        file_path (pathlib.Path): Path to the CSV file.
+
+    Returns:
+        list: List of tuples containing state, count, and percentage of total failures.
+    """
     try:
-        # initialize an empty list to store the scores
-        score_list = []
-        with file_path.open('r') as file:
-            # csv.DictReader() methods to read into a DictReader so we can access named columns in the csv file
-            dict_reader = csv.DictReader(file)  
-            for row in dict_reader:
-                try:
-                    score = float(row["Ladder score"])  # Extract and convert to float
-                    # append the score to the list
-                    score_list.append(score)
-                except ValueError as e:
-                    logger.warning(f"Skipping invalid row: {row} ({e})")
+        # Initialize a Counter to store failed bank counts by state
+        state_counts = Counter()
+
+        with file_path.open('r', encoding='utf-8-sig') as file:
+            csv_reader = csv.DictReader(file)
+
+            # Check if the expected "State" column exists in the CSV
+            if not csv_reader.fieldnames or "State" not in csv_reader.fieldnames:
+                logger.error(f"CSV missing 'State' column. Found headers: {csv_reader.fieldnames}")
+                return []
+
+            for row in csv_reader:
+                state = row.get("State", "").strip()  # Ensure no whitespace issues
+                if state:  
+                    state_counts[state] += 1  # Increment count for the state
         
-        # Calculate statistics
-        stats = {
-            "min": min(score_list),
-            "max": max(score_list),
-            "mean": statistics.mean(score_list),
-            "stdev": statistics.stdev(score_list) if len(score_list) > 1 else 0,
-        }
-        return stats
+        if not state_counts:
+            logger.error("No state data found in CSV file.")
+            return []
+
+        # Get total failed banks
+        total_failures = sum(state_counts.values())
+
+        # Sort by highest count and get the top 10 states
+        top_10 = state_counts.most_common(10)
+
+        # Calculate percentage of total failures for each state
+        top_10_percentages = [(state, count, (count / total_failures) * 100) for state, count in top_10]
+
+        return top_10_percentages
+
     except Exception as e:
         logger.error(f"Error processing CSV file: {e}")
-        return {}
+        return []
 
 def process_csv_file():
-    """Read a CSV file, analyze Ladder score, and save the results."""
+    """
+    Read a CSV file, compute the top 10 states with the most failed banks,
+    and save the results to a text file.
+    """
     input_file = pathlib.Path(fetched_folder_name, "FDIC_failed_bank_list.csv")
     output_file = pathlib.Path(processed_folder_name, "top_10_states_failed_banks.txt")
-    
-    stats = analyze_ladder_score(input_file)
+
+    top_10_states = get_top_10_states(input_file)
+
+    # Create the processed folder if it doesn't exist
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    
-    with output_file.open('w') as file:
-        file.write("Ladder Score Statistics:\n")
-        file.write(f"Minimum: {stats['min']:.2f}\n")
-        file.write(f"Maximum: {stats['max']:.2f}\n")
-        file.write(f"Mean: {stats['mean']:.2f}\n")
-        file.write(f"Standard Deviation: {stats['stdev']:.2f}\n")
-    
+
+    with output_file.open('w', encoding='utf-8') as file:
+        file.write("Top 10 States with Most Failed Banks:\n")
+        file.write("=" * 40 + "\n")
+        file.write(f"{'State':<10}{'Count':<10}{'Percentage'}\n")
+        file.write("=" * 40 + "\n")
+
+        for state, count, percentage in top_10_states:
+            file.write(f"{state:<10}{count:<10}{percentage:.2f}%\n")
+
     logger.info(f"Processed CSV file: {input_file}, Statistics saved to: {output_file}")
 
 #####################################

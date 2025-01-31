@@ -96,3 +96,13 @@
 2025-01-31 16:08:35.786 | INFO     | __main__:write_csv_file:82 - Writing CSV data to data\FDIC_failed_bank_list.csv...
 2025-01-31 16:08:35.787 | INFO     | __main__:write_csv_file:89 - SUCCESS: CSV data written to data\FDIC_failed_bank_list.csv
 2025-01-31 16:08:35.787 | INFO     | __main__:fetch_csv_file:61 - SUCCESS: CSV file fetched and saved as FDIC_failed_bank_list.csv
+2025-01-31 16:14:36.706 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 16:14:36.706 | INFO     | __main__:<module>:100 - Starting CSV processing...
+2025-01-31 16:14:36.707 | ERROR    | __main__:get_top_10_states:53 - No state data found in CSV file.
+2025-01-31 16:14:36.708 | INFO     | __main__:process_csv_file:93 - Processed CSV file: data\FDIC_failed_bank_list.csv, Statistics saved to: processed\top_10_states_failed_banks.txt
+2025-01-31 16:14:36.708 | INFO     | __main__:<module>:102 - CSV processing complete.
+2025-01-31 16:19:11.563 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 16:19:11.563 | INFO     | __main__:<module>:105 - Starting CSV processing...
+2025-01-31 16:19:11.564 | ERROR    | __main__:get_top_10_states:49 - CSV missing 'State' column. Found headers: ['Bank Name\xa0', 'City\xa0', 'State\xa0', 'Cert\xa0', 'Acquiring Institution\xa0', 'Closing Date\xa0', 'Fund']
+2025-01-31 16:19:11.564 | INFO     | __main__:process_csv_file:98 - Processed CSV file: data\FDIC_failed_bank_list.csv, Statistics saved to: processed\top_10_states_failed_banks.txt
+2025-01-31 16:19:11.565 | INFO     | __main__:<module>:107 - CSV processing complete.
