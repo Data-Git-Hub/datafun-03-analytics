@@ -108,4 +108,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-# TODO: Run this script to ensure all functions work as intended.
