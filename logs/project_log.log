@@ -26,3 +26,7 @@
 2025-01-31 14:15:39.791 | INFO     | __main__:<module>:78 - Starting CSV processing...
 2025-01-31 14:15:39.793 | INFO     | __main__:process_csv_file:71 - Processed CSV file: example_data\2020_happiness.csv, Statistics saved to: example_processed\happiness_ladder_score_stats.txt
 2025-01-31 14:15:39.793 | INFO     | __main__:<module>:80 - CSV processing complete.
+2025-01-31 14:16:25.569 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 14:16:25.569 | INFO     | __main__:<module>:61 - Starting Excel processing...
+2025-01-31 14:16:25.578 | INFO     | __main__:process_excel_file:54 - Processed Excel file: example_data\feedback.xlsx, Word count saved to: example_processed\excel_feedback_github_count.txt
+2025-01-31 14:16:25.578 | INFO     | __main__:<module>:63 - Excel processing complete.
