@@ -35,7 +35,7 @@ def fetch_excel_file(folder_name: str, filename: str, url: str) -> None:
 
     Args:
         folder_name (str): Name of the folder to save the file.
-        filename (str): Name of the output file.
+        filename (str): Name of the output file (with .xlsx extension).
         url (str): URL of the Excel file to fetch.
 
     Returns:
@@ -50,10 +50,16 @@ def fetch_excel_file(folder_name: str, filename: str, url: str) -> None:
 
     try:
         logger.info(f"Fetching Excel data from {url}...")
-        response = requests.get(url)
+        response = requests.get(url, stream=True)  # Stream for large files
         response.raise_for_status()
+
+        # Ensure filename has .xlsx extension
+        if not filename.endswith(".xlsx"):
+            filename += ".xlsx"
+
         write_excel_file(folder_name, filename, response.content)
         logger.info(f"SUCCESS: Excel file fetched and saved as {filename}")
+
     except requests.exceptions.HTTPError as http_err:
         logger.error(f"HTTP error occurred: {http_err}")
     except requests.exceptions.RequestException as req_err:
@@ -89,9 +95,11 @@ def main():
     """
     Main function to demonstrate fetching Excel data.
     """
-    excel_url = 'https://inventory.data.gov/dataset/67567804-073d-40ad-a710-2b0bed8b84e2/resource/3b7ed6b7-7dce-42f1-852d-6465e3e790e4/download/nsn-extract-2-21-23.xls.xlsx'
+    excel_url = "https://inventory.data.gov/dataset/67567804-073d-40ad-a710-2b0bed8b84e2/resource/3b7ed6b7-7dce-42f1-852d-6465e3e790e4/download/nsn-extract-2-21-23.xls.xlsx"
     logger.info("Starting Excel fetch demonstration...")
-    fetch_excel_file(fetched_folder_name, "national_stock_number_2023", excel_url)
+
+    # Ensure filename has correct extension
+    fetch_excel_file(fetched_folder_name, "national_stock_number_2023.xlsx", excel_url)
 
 #####################################
 # Conditional Execution
