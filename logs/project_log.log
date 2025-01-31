@@ -110,3 +110,11 @@
 2025-01-31 16:21:41.228 | INFO     | __main__:<module>:109 - Starting CSV processing...
 2025-01-31 16:21:41.229 | INFO     | __main__:process_csv_file:102 - Processed CSV file: data\FDIC_failed_bank_list.csv, Statistics saved to: processed\top_10_states_failed_banks.txt
 2025-01-31 16:21:41.230 | INFO     | __main__:<module>:111 - CSV processing complete.
+2025-01-31 16:29:29.804 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 16:29:29.804 | INFO     | __main__:<module>:109 - Starting CSV processing...
+2025-01-31 16:29:29.806 | INFO     | __main__:process_csv_file:102 - Processed CSV file: data\FDIC_failed_bank_list.csv, Statistics saved to: datafun-03-analytics\data_processed\top_10_states_failed_banks.txt
+2025-01-31 16:29:29.806 | INFO     | __main__:<module>:111 - CSV processing complete.
+2025-01-31 16:30:57.755 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 16:30:57.755 | INFO     | __main__:<module>:106 - Starting CSV processing...
+2025-01-31 16:30:57.757 | INFO     | __main__:process_csv_file:99 - Processed CSV file: data\FDIC_failed_bank_list.csv, Statistics saved to: data_processed\top_10_states_failed_banks.txt
+2025-01-31 16:30:57.757 | INFO     | __main__:<module>:108 - CSV processing complete.

@@ -80,15 +80,12 @@ def get_top_10_states(file_path: pathlib.Path) -> list:
 def process_csv_file():
     """
     Read a CSV file, compute the top 10 states with the most failed banks,
-    and save the results to a text file.
+    and save the results to a text file in the 'data_processed' folder.
     """
     input_file = pathlib.Path(fetched_folder_name, "FDIC_failed_bank_list.csv")
-    output_file = pathlib.Path(processed_folder_name, "top_10_states_failed_banks.txt")
+    output_file = pathlib.Path("data_processed", "top_10_states_failed_banks.txt")  # Updated output path
 
     top_10_states = get_top_10_states(input_file)
-
-    # Create the processed folder if it doesn't exist
-    output_file.parent.mkdir(parents=True, exist_ok=True)
 
     with output_file.open('w', encoding='utf-8') as file:
         file.write("Top 10 States with Most Failed Banks:\n")
