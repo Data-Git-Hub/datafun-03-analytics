@@ -61,7 +61,7 @@ def fetch_txt_file(folder_name: str, filename: str, url: str) -> None:
 
 def write_txt_file(folder_name: str, filename: str, string_data: str) -> None:
     """
-    Write text data to a file.
+    Write text data to a file with UTF-8 encoding.
 
     Args:
         folder_name (str): Name of the folder to save the file.
@@ -75,11 +75,15 @@ def write_txt_file(folder_name: str, filename: str, string_data: str) -> None:
     try:
         logger.info(f"Writing data to {file_path}...")
         file_path.parent.mkdir(parents=True, exist_ok=True)
-        with file_path.open('w') as file:
+        
+        # Write file using UTF-8 encoding
+        with file_path.open('w', encoding='utf-8') as file:
             file.write(string_data)
+        
         logger.info(f"SUCCESS: Data written to {file_path}")
     except IOError as io_err:
         logger.error(f"Error writing to file {file_path}: {io_err}")
+
 
 #####################################
 # Define main() function
