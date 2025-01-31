@@ -40,9 +40,6 @@ def fetch_csv_file(folder_name: str, filename: str, url: str) -> None:
 
     Returns:
         None
-
-    Example:
-        fetch_csv_file("data", "data.csv", "https://example.com/data.csv")
     """
     if not url:
         logger.error("The URL provided is empty. Please provide a valid URL.")
@@ -52,8 +49,17 @@ def fetch_csv_file(folder_name: str, filename: str, url: str) -> None:
         logger.info(f"Fetching CSV data from {url}...")
         response = requests.get(url)
         response.raise_for_status()
-        write_csv_file(folder_name, filename, response.text)
+
+        # Try decoding with utf-8-sig first, then fall back to ISO-8859-1 (Latin-1)
+        try:
+            csv_content = response.content.decode('utf-8-sig')
+        except UnicodeDecodeError:
+            logger.warning("UTF-8 decoding failed. Trying ISO-8859-1 (Latin-1)...")
+            csv_content = response.content.decode('ISO-8859-1')  # Fix encoding issue
+
+        write_csv_file(folder_name, filename, csv_content)
         logger.info(f"SUCCESS: CSV file fetched and saved as {filename}")
+
     except requests.exceptions.HTTPError as http_err:
         logger.error(f"HTTP error occurred: {http_err}")
     except requests.exceptions.RequestException as req_err:
@@ -75,12 +81,14 @@ def write_csv_file(folder_name: str, filename: str, string_data: str) -> None:
     try:
         logger.info(f"Writing CSV data to {file_path}...")
         file_path.parent.mkdir(parents=True, exist_ok=True)
-        with file_path.open('w', encoding='utf-8') as file:  # Specify UTF-8 encoding here to fix the error get_file action
+
+        # Write file using UTF-8 encoding
+        with file_path.open('w', encoding='utf-8', newline='') as file:  
             file.write(string_data)
+
         logger.info(f"SUCCESS: CSV data written to {file_path}")
     except IOError as io_err:
         logger.error(f"Error writing CSV data to {file_path}: {io_err}")
-
 
 #####################################
 # Define main() function
@@ -100,5 +108,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
