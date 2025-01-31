@@ -1,5 +1,41 @@
 # datafun-03-analytics
 
+---
+
+## Create Project Virtual Environment
+
+On Windows, create a project virtual environment in the .venv folder. 
+
+```shell
+
+py -m venv .venv
+.venv\Scripts\Activate
+py -m pip install -r requirements.txt
+
+```
+
+## Git add and commit 
+
+```shell
+git add .
+git commit -m "add .gitignore, cmds to readme"
+git push -u origin main
+```
+---
+
+## Fetchers (Get Urls)
+
+Data-Git-Hub_get_csv.py \
+   - gets .csv file from URL of the FDIC failed bank list.
+Data-Git-Hub_get_excel.py \
+   - gets .xlsx file from URL of the United States National Stock Numbers as of 2023.
+Data-Git-Hub_get_JSON.py \
+   - gets .json file from URL of the United States Veterans receiving Compensation by State and County as of 2023.
+Data-Git-Hub_get_text.py \
+   - gets .txt file from URL of the United States Constitution. 
+
+---
+
 ## Overview
 This project demonstrates how to fetch and process various types of 
 data (Excel, JSON, text, and CSV) using Python. 
@@ -107,10 +143,10 @@ Ensure your commit messages are clear and professional.
 
 Make sure the following requirements have been met:
 
-- [ ] You have committed a useful .gitignore file.
-- [ ] You have committed a useful logs/project_log.log file. 
-- [ ] All example scripts executed successfully.
-- [ ] Four fetcher scripts created and executed.
-- [ ] Four processor scripts created and functional.
-- [ ] README.md includes explanations for fetchers and processors with commands for execution.
-- [ ] Each Python file contains a docstring with its purpose and input/output details.
+- [ Y ] You have committed a useful .gitignore file.
+- [ Y ] You have committed a useful logs/project_log.log file. 
+- [ Y ] All example scripts executed successfully.
+- [ Y ] Four fetcher scripts created and executed.
+- [ Y ] Four processor scripts created and functional.
+- [ Y ] README.md includes explanations for fetchers and processors with commands for execution.
+- [ Y ] Each Python file contains a docstring with its purpose and input/output details.
