@@ -1,0 +1,14 @@
+Top 10 States with Most Disability Compensation Recipients:
+============================================================
+State               Total Recipients    SCD 100% Percentage
+============================================================
+Texas               598966              27.42%
+Florida             472066              23.39%
+California          461027              23.96%
+North Carolina      252349              29.59%
+Georgia             242972              27.30%
+Virginia            241187              25.36%
+Ohio                169715              17.05%
+Washington          159271              18.80%
+Pennsylvania        151501              20.22%
+Tennessee           150405              24.23%

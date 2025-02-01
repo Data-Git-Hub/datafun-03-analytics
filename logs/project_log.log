@@ -136,3 +136,21 @@
 2025-01-31 16:54:33.013 | INFO     | __main__:<module>:101 - Starting Excel processing...
 2025-01-31 16:54:33.485 | INFO     | __main__:process_excel_file:94 - Processed Excel file: data\national_stock_number_2023.xlsx, Statistics saved to: data_processed\highest_price_nsn_per_rep_office.txt
 2025-01-31 16:54:33.486 | INFO     | __main__:<module>:103 - Excel processing complete.
+2025-01-31 18:34:29.880 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:34:29.880 | INFO     | __main__:<module>:111 - Starting JSON processing...
+2025-01-31 18:34:29.888 | INFO     | __main__:process_json_file:104 - Processed JSON file: data\usvet_cp_state_county.json, Results saved to: data_processed\top_10_states_disability_recipients.txt
+2025-01-31 18:34:29.889 | INFO     | __main__:<module>:113 - JSON processing complete.
+2025-01-31 18:35:52.107 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:35:52.107 | INFO     | __main__:<module>:134 - Starting JSON processing...
+2025-01-31 18:35:52.113 | ERROR    | __main__:get_top_10_states:48 - Invalid JSON structure: 'people' key missing or incorrect format.
+2025-01-31 18:35:52.114 | ERROR    | __main__:process_json_file:110 - No valid data found to process.
+2025-01-31 18:35:52.114 | INFO     | __main__:<module>:136 - JSON processing complete.
+2025-01-31 18:40:27.917 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:40:27.918 | INFO     | __main__:<module>:103 - Starting JSON processing...
+2025-01-31 18:40:27.924 | ERROR    | __main__:get_top_10_states:45 - Invalid JSON structure: Expected a list of records.
+2025-01-31 18:40:27.925 | INFO     | __main__:process_json_file:96 - Processed JSON file: data\usvet_cp_state_county.json, Statistics saved to: data_processed\top_10_states_scd_100_percentage.txt
+2025-01-31 18:40:27.925 | INFO     | __main__:<module>:105 - JSON processing complete.
+2025-01-31 18:44:29.530 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:44:29.530 | INFO     | __main__:<module>:91 - Starting JSON processing...
+2025-01-31 18:44:29.548 | INFO     | __main__:process_json_file:84 - Processed JSON file: data\usvet_cp_state_county.json, Results saved to: data_processed\top_10_states_scd_100_percentage.txt
+2025-01-31 18:44:29.548 | INFO     | __main__:<module>:93 - JSON processing complete.
