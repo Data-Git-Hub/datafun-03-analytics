@@ -23,7 +23,7 @@ git push -u origin main
 ```
 ---
 
-## Fetchers (Get Urls)
+## Getters (Get URLs)
 
 Data-Git-Hub_get_csv.py \
    - gets .csv file from URL of the FDIC failed bank list.
@@ -33,6 +33,30 @@ Data-Git-Hub_get_JSON.py \
    - gets .json file from URL of the United States Veterans receiving Compensation by State and County as of 2023.
 Data-Git-Hub_get_text.py \
    - gets .txt file from URL of the United States Constitution. 
+
+## Processors
+
+Data-Git-Hub_process_csv.py \
+   - calculates the top 10 states with the highest bank failure.
+Data-Git-Hub_process_excel.py \
+   - calculates the highest price item from the national stock number by each office rep.
+Data-Git-Hub_process_JSON.py \
+   - calculates the top 10 states with the most SCD 100% US Veterans.
+Data-Git-Hub_process_text.py \
+   - calculates the top 50 words in the US Constitution. 
+
+## Executors
+   - Getters
+py Data-Git-Hub_get_csv.py
+py Data-Git-Hub_get_excel.py
+py Data-Git-Hub_get_JSON.p
+py Data-Git-Hub_get_text.py
+
+   -Processors
+py Data-Git-Hub_process_csv.py
+py Data-Git-Hub_process_excel.py
+py Data-Git-Hub_process_JSON.py
+py Data-Git-Hub_process_text.py
 
 ---
 
