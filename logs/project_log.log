@@ -154,3 +154,27 @@
 2025-01-31 18:44:29.530 | INFO     | __main__:<module>:91 - Starting JSON processing...
 2025-01-31 18:44:29.548 | INFO     | __main__:process_json_file:84 - Processed JSON file: data\usvet_cp_state_county.json, Results saved to: data_processed\top_10_states_scd_100_percentage.txt
 2025-01-31 18:44:29.548 | INFO     | __main__:<module>:93 - JSON processing complete.
+2025-01-31 18:48:59.803 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:48:59.803 | INFO     | __main__:main:97 - Starting text fetch demonstration...
+2025-01-31 18:48:59.803 | INFO     | __main__:fetch_txt_file:52 - Fetching text data from https://gutenberg.org/cache/epub/5/pg5.txt...
+2025-01-31 18:49:00.131 | INFO     | __main__:write_txt_file:76 - Writing data to data\usconstitution.txt...
+2025-01-31 18:49:00.132 | INFO     | __main__:write_txt_file:83 - SUCCESS: Data written to data\usconstitution.txt
+2025-01-31 18:49:00.132 | INFO     | __main__:fetch_txt_file:56 - SUCCESS: Text file fetched and saved as usconstitution.txt
+2025-01-31 18:53:46.693 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:53:46.693 | INFO     | __main__:<module>:89 - Starting text processing...
+2025-01-31 18:53:46.693 | ERROR    | __main__:count_top_words:58 - Error processing text file: [Errno 2] No such file or directory: 'example_data\\usconstitution.txt'
+2025-01-31 18:53:46.694 | INFO     | __main__:process_text_file:82 - Processed text file: example_data\usconstitution.txt, Word counts saved to: example_processed\top_50_words.txt
+2025-01-31 18:53:46.694 | INFO     | __main__:<module>:91 - Text processing complete.
+2025-01-31 18:54:12.333 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:54:12.333 | INFO     | __main__:<module>:89 - Starting text processing...
+2025-01-31 18:54:12.337 | INFO     | __main__:process_text_file:82 - Processed text file: data\usconstitution.txt, Word counts saved to: data_processed\top_50_words.txt
+2025-01-31 18:54:12.337 | INFO     | __main__:<module>:91 - Text processing complete.
+2025-01-31 18:58:26.410 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:58:26.411 | INFO     | __main__:<module>:95 - Starting text processing...
+2025-01-31 18:58:26.411 | ERROR    | __main__:count_top_words:64 - Error processing text file: [Errno 2] No such file or directory: 'example_data\\usconstitution.txt'
+2025-01-31 18:58:26.411 | INFO     | __main__:process_text_file:88 - Processed text file: example_data\usconstitution.txt, Word counts saved to: example_processed\top_50_words.txt
+2025-01-31 18:58:26.411 | INFO     | __main__:<module>:97 - Text processing complete.
+2025-01-31 18:58:45.573 | INFO     | utils_logger:<module>:41 - Logging to file: logs\project_log.log
+2025-01-31 18:58:45.573 | INFO     | __main__:<module>:95 - Starting text processing...
+2025-01-31 18:58:45.575 | INFO     | __main__:process_text_file:88 - Processed text file: data\usconstitution.txt, Word counts saved to: data_processed\top_50_words.txt
+2025-01-31 18:58:45.575 | INFO     | __main__:<module>:97 - Text processing complete.

@@ -1,6 +1,6 @@
 """
 This example file fetches a text file of Unites States Constitution from the Gutenberg Project. 
-and saves it to a local file named usconsitution.txt in a folder named data.
+and saves it to a local file named usconstitution.txt in a folder named data.
 
 Please save a copy of the provided utils_logger.py file 
 in the same folder as this file.
@@ -95,7 +95,7 @@ def main():
     """
     txt_url = 'https://gutenberg.org/cache/epub/5/pg5.txt'
     logger.info("Starting text fetch demonstration...")
-    fetch_txt_file(fetched_folder_name, "usconsitution.txt", txt_url)
+    fetch_txt_file(fetched_folder_name, "usconstitution.txt", txt_url)
 
 #####################################
 # Conditional Execution

@@ -1,0 +1,54 @@
+Top 50 Most Frequent Words (Lines 128-666):
+==================================================
+Word           Count
+==================================================
+the            193
+of             141
+and            99
+shall          97
+to             67
+be             67
+in             36
+states         32
+or             32
+for            29
+a              28
+by             27
+united         26
+any            25
+house          20
+state          18
+may            17
+which          16
+no             16
+such           16
+on             16
+not            15
+have           14
+law            14
+all            13
+but            13
+it             13
+congress       12
+each           12
+from           12
+representatives11
+other          11
+as             11
+section        10
+their          10
+one            10
+senate         9
+years          9
+that           9
+at             9
+president      9
+he             8
+they           8
+two            8
+office         8
+provide        7
+every          7
+year           7
+when           7
+if             7
